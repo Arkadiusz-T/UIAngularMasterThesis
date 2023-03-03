@@ -5,14 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InfoBar } from './components/InfoBar.component';
 import { SelectDBMS } from './components/selectBdmsType.component';
+import { SelectTestParameters } from './components/selectTestParameters.component';
 import { SelectTextLength } from './components/selectTextLength.component';
+import { SelectVarType } from './components/selectVarType.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoBar,
     SelectDBMS,
-    SelectTextLength
+    SelectTextLength,
+    SelectVarType,
+    SelectTestParameters
   ],
   imports: [
     BrowserModule,
