@@ -1,5 +1,5 @@
 Typ zmiennej
-<select id="typZmiennejSelect" className="custom-select">
+<select #selectVariableType id="typZmiennejSelect" className="custom-select" (change)="onSelected(selectVariableType.value)">
     <option value="char">char</option>
     <option value="varchar">varchar</option>
 </select>

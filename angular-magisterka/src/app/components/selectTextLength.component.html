@@ -1,5 +1,5 @@
 Długość textu
-<select id="dlugoscTekstuSelect" className="custom-select">
+<select #selectTextLength id="dlugoscTekstuSelect" className="custom-select" (change)="onSelected(selectTextLength.value)">
     <option value="krotkie">krotkie</option>
     <option value="srednie">srednie</option>
     <option value="dlugie">dlugie</option>

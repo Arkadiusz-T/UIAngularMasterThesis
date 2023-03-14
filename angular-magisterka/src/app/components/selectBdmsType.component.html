@@ -1,6 +1,6 @@
 Chose DBMS
-<select id="dlugoscTekstuSelect" className="custom-select">
-    <option value="krotkie">krotkie</option>
-    <option value="srednie">srednie</option>
-    <option value="dlugie">dlugie</option>
+<select #selectDbmsType id="dlugoscTekstuSelect" className="custom-select" (change)="onSelected(selectDbmsType.value)" >
+    <option value="mysql">MySQL</option>
+    <option value="mssql">MsSQL</option>
+    <option value="oracledb">OracleDB</option>
 </select>

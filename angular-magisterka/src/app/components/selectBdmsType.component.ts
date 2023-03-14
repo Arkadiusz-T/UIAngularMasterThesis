@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShareTestData } from '../services/shareTestData.service';
 
 @Component({
   selector: 'select-dbms',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: []
 })
 export class SelectDBMS {
-}
+  constructor(private _shareTestData: ShareTestData){}
+
+  onSelected(newValue: string){
+    this._shareTestData.dbmsType = newValue;
+  }
+} 
