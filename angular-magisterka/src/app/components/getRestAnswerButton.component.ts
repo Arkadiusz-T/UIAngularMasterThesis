@@ -1,4 +1,6 @@
 import { Component, ElementRef, ViewChild} from '@angular/core';
+import { take } from 'rxjs';
+import { GetDataFromApi } from '../services/getDataFromApi.service';
 import { ShareTestData } from '../services/shareTestData.service';
 
 @Component({
@@ -7,8 +9,16 @@ import { ShareTestData } from '../services/shareTestData.service';
   styleUrls: []
 })
 export class GetRestAnswerButton {
-  constructor(private _shareTestData: ShareTestData){}
+  constructor(private _shareTestData: ShareTestData, private _getDataFromApi: GetDataFromApi){}
+
+  
   getValue(){
       console.log(this._shareTestData);
+      this._getDataFromApi
+      .getDataFromRestEndpoint(this._shareTestData.dbmsType, this._shareTestData.textLength, this._shareTestData.variableType)
+      .subscribe((data) =>{
+        console.log(data)
+      }
+      );
   }
 } 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { SelectDBMS } from './components/selectBdmsType.component';
 import { SelectTestParameters } from './components/selectTestParameters.component';
 import { SelectTextLength } from './components/selectTextLength.component';
 import { SelectVarType } from './components/selectVarType.component';
+import { GetDataFromApi } from './services/getDataFromApi.service';
 import { ShareTestData } from './services/shareTestData.service';
 
 @NgModule({
@@ -25,9 +27,13 @@ import { ShareTestData } from './services/shareTestData.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ShareTestData],
+  providers: [
+    ShareTestData, 
+    GetDataFromApi
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

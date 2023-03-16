@@ -11,5 +11,6 @@ export class ShareTestData{
     public dbmsType: string = "mysql";
     public textLength: string = "krotkie";
     public variableType: string = "char";
-
+    public restAnswer: any;
+    public soapAnswer: any;
 }
