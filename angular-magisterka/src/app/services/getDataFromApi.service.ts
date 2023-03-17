@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 @Injectable(
@@ -23,6 +23,25 @@ export class GetDataFromApi{
     }
 
     getDataFromSoapEndpoint(dbmsType: string, textLength: string, variableType: string){
+        let headers = new HttpHeaders().set('Content-Type', 'text/xml');
         
+        return this.http.post(
+            "http://localhost:8080/ws",
+            `<?xml version="1.0" encoding="utf-8"?>
+            <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+                            xmlns:std="http://www.dupa.pl/soapexample"
+            >
+              <soap:Body>
+                <std:getSoapTimes >
+                  <textLength>`+textLength+`</textLength>
+                  <textType>`+variableType+`</textType>
+                  <czasWyslaniaRequestuZFrontendu>`+this.getCurrentTime()+`</czasWyslaniaRequestuZFrontendu>
+                  <dbmsType>`+dbmsType+`</dbmsType>
+                </std:getSoapTimes>
+              </soap:Body>
+            </soap:Envelope>`,
+            {headers: headers}
+        );
+        // chrome.exe" --disable-web-security --user-data-dir="C:/ChromeDevSession"
     }
 }

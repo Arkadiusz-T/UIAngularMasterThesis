@@ -10,7 +10,12 @@ import { ShareTestData } from '../services/shareTestData.service';
 export class PostSoapAnswerButton {
   constructor(private _shareTestData: ShareTestData, private _getDataFromApi: GetDataFromApi){}
   getValue(){
-      console.log(this._shareTestData);
-      this._getDataFromApi.getDataFromRestEndpoint(this._shareTestData.dbmsType, this._shareTestData.textLength, this._shareTestData.variableType);
+    console.log(this._shareTestData);
+    this._getDataFromApi
+    .getDataFromSoapEndpoint(this._shareTestData.dbmsType, this._shareTestData.textLength, this._shareTestData.variableType)
+    .subscribe((data) =>{
+      console.log(data)
+    }
+    );
   }
 }
