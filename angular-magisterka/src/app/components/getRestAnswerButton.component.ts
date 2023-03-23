@@ -17,7 +17,7 @@ export class GetRestAnswerButton {
       this._getDataFromApi
       .getDataFromRestEndpoint(this._shareTestData.dbmsType, this._shareTestData.textLength, this._shareTestData.variableType)
       .subscribe((data) =>{
-        console.log(data)
+        this._shareTestData.restAnswer = data;
       }
       );
   }

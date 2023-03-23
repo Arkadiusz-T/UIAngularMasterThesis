@@ -13,6 +13,8 @@ import { SelectTextLength } from './components/selectTextLength.component';
 import { SelectVarType } from './components/selectVarType.component';
 import { GetDataFromApi } from './services/getDataFromApi.service';
 import { ShareTestData } from './services/shareTestData.service';
+import { ExtractDataFromSoapWs } from './services/extractDataFromSoapResponse.service';
+import { Result } from './components/results.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ShareTestData } from './services/shareTestData.service';
     SelectVarType,
     SelectTestParameters,
     GetRestAnswerButton,
-    PostSoapAnswerButton
+    PostSoapAnswerButton,
+    Result
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { ShareTestData } from './services/shareTestData.service';
   ],
   providers: [
     ShareTestData, 
-    GetDataFromApi
+    GetDataFromApi,
+    ExtractDataFromSoapWs
   ],
   bootstrap: [AppComponent]
 })

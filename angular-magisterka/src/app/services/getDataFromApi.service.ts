@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 @Injectable(
@@ -23,7 +23,7 @@ export class GetDataFromApi{
     }
 
     getDataFromSoapEndpoint(dbmsType: string, textLength: string, variableType: string){
-        let headers = new HttpHeaders().set('Content-Type', 'text/xml');
+        let headers = new HttpHeaders().set('Content-Type', 'text/xml').set('responseType', 'json');
         
         return this.http.post(
             "http://localhost:8080/ws",
@@ -42,6 +42,7 @@ export class GetDataFromApi{
             </soap:Envelope>`,
             {headers: headers}
         );
+        
         // chrome.exe" --disable-web-security --user-data-dir="C:/ChromeDevSession"
     }
 }

@@ -13,4 +13,8 @@ export class ShareTestData{
     public variableType: string = "char";
     public restAnswer: any;
     public soapAnswer: any;
+    public dbDataFetchTime: any = "";
+    public frontToBackEndTime: any = "";
+    public backendResponseTime: any = "";
+    public textsSimilarity: any = "";
 }
