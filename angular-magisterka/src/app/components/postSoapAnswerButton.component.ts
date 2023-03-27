@@ -26,10 +26,10 @@ export class PostSoapAnswerButton {
     },
     (error) => {
       this._shareTestData.soapAnswer = error.error.text;
-      this._shareTestData.dbDataFetchTime = this._responseDataExtractor.extractDbmsData(error.error.text);
-      this._shareTestData.frontToBackEndTime = this._responseDataExtractor.extracFrontToBackendData(error.error.text);
-      this._shareTestData.backendResponseTime = this.getCurrentTime() - Number(this._responseDataExtractor.extracBackendResponseTimeData(error.error.text));
-      this._shareTestData.textsSimilarity = this._responseDataExtractor.extracTextsSimilarityData(error.error.text);
+      this._shareTestData.dbDataFetchTime = "dbDataFetchTime: " + this._responseDataExtractor.extractDbmsData(error.error.text);
+      this._shareTestData.frontToBackEndTime = "frontToBackEndTime:" + this._responseDataExtractor.extracFrontToBackendData(error.error.text);
+      this._shareTestData.backendResponseTime = "backendResponseTime: " + (this.getCurrentTime() - Number(this._responseDataExtractor.extracBackendResponseTimeData(error.error.text))).toString();
+      this._shareTestData.textsSimilarity = "textsSimilarity: " + this._responseDataExtractor.extracTextsSimilarityData(error.error.text);
     }
     );
   }

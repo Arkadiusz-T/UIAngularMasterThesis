@@ -43,6 +43,6 @@ export class GetDataFromApi{
             {headers: headers}
         );
         
-        // chrome.exe" --disable-web-security --user-data-dir="C:/ChromeDevSession"
+        // chrome.exe --disable-web-security --user-data-dir="C:/ChromeDevSession"
     }
 }

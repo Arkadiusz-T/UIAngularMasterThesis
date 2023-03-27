@@ -15,6 +15,7 @@ import { GetDataFromApi } from './services/getDataFromApi.service';
 import { ShareTestData } from './services/shareTestData.service';
 import { ExtractDataFromSoapWs } from './services/extractDataFromSoapResponse.service';
 import { Result } from './components/results.component';
+import { ExtractDataFromRestResp } from './services/extractDataFromRestResponse.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { Result } from './components/results.component';
   providers: [
     ShareTestData, 
     GetDataFromApi,
-    ExtractDataFromSoapWs
+    ExtractDataFromSoapWs,
+    ExtractDataFromRestResp
   ],
   bootstrap: [AppComponent]
 })
